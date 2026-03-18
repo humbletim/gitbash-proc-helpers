@@ -1,0 +1,14 @@
+# Add these to the end of your ~/.bashrc or ~/.bash_profile
+# Replace /f/ with the actual path to your scripts
+
+if ! command -v ps >/dev/null 2>&1 || [[ $(ps --version 2>&1) == *"procps-ng"* ]]; then
+    alias ps='/f/winps.sh'
+fi
+
+if ! command -v pgrep >/dev/null 2>&1; then
+    alias pgrep='/f/winpgrep.sh'
+fi
+
+if ! command -v killall >/dev/null 2>&1; then
+    alias killall='/f/winkillall.sh'
+fi
